@@ -17,16 +17,7 @@
 #include <type_traits>
 #include <cstddef>
 #include <boost/math/quadrature/detail/padua_points_impl.hpp>
-
-#ifdef __has_include && defined __has_include(<concepts>)
-
-#include <concepts>
-template<typename T>
-concept RealType = std::is_floating_point_v<T>;
-
-#else
-#define RealType typename
-#endif
+#include <boost/math/concepts/concepts.hpp>
 
 namespace boost { namespace math { namespace quadrature {
 
@@ -35,7 +26,7 @@ class padua_points
 {
 private:
     std::unique_ptr<detail::padua_points_impl<Real>> impl_;
-    
+
 public:
     explicit padua_points(std::size_t levels) : impl_(std::make_unique<detail::padua_points_impl<Real>>(levels)) {};
 };
