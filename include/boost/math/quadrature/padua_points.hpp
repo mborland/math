@@ -21,14 +21,14 @@
 
 namespace boost { namespace math { namespace quadrature {
 
-template<RealType Real>
+template<SimpleRealType Real>
 class padua_points
 {
 private:
     std::unique_ptr<detail::padua_points_impl<Real>> impl_;
 
 public:
-    explicit padua_points(std::size_t levels) : impl_(std::make_unique<detail::padua_points_impl<Real>>(levels)) {};
+    explicit padua_points(std::size_t levels) : impl_(std::make_unique<detail::padua_points_impl<Real>>(levels)) {}
 };
 
 }}} // Namespaces

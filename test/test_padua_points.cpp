@@ -6,7 +6,7 @@
 
 #include <boost/math/quadrature/padua_points.hpp>
 
-int main()
+int main(void)
 {
-    boost::math::quadrature::padua_points<double> dummy(5);
+    boost::math::quadrature::padua_points<double> dummy(1);
 }

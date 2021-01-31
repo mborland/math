@@ -10,14 +10,19 @@
 #ifndef BOOST_MATH_CONCEPTS
 #define BOOST_MATH_CONCEPTS
 
-#ifdef __has_include && defined __has_include(<concepts>)
+#if __cplusplus > 202000L || _MSVC_LANG > 202000L && defined __has_include && __has_include(<concepts>)
 #include <concepts>
 
+// RealType that excludes multiprecision types
 template<typename T>
-concept RealType = std::is_floating_point_v<T>;
+concept SimpleRealType = std::is_floating_point_v<T>;
+
+template<typename T>
+concept Functor = std::is_function_v<T>;
 
 #else
-#define RealType typename
+#define SimpleRealType typename
+#define Functor typename
 #endif
 
 #endif // BOOST_MATH_CONCEPTS
