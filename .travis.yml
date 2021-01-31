@@ -27,7 +27,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=special_fun
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=special_fun
       addons:
         apt:
           packages:
@@ -41,7 +41,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=distribution_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=distribution_tests
       addons:
         apt:
           packages:
@@ -55,7 +55,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=quadrature
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=quadrature
       addons:
         apt:
           packages:
@@ -69,7 +69,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=float128_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=float128_tests
       addons:
         apt:
           packages:
@@ -83,7 +83,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../example//examples
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../example//examples
       addons:
         apt:
           packages:
@@ -97,7 +97,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../tools
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../tools
       addons:
         apt:
           packages:
@@ -111,7 +111,7 @@ matrix:
     - os: linux
       arch: ppc64le
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=misc
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=misc
       addons:
         apt:
           packages:
@@ -125,7 +125,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=special_fun
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=special_fun
       addons:
         apt:
           packages:
@@ -139,7 +139,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=distribution_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=distribution_tests
       addons:
         apt:
           packages:
@@ -153,7 +153,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=quadrature
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=quadrature
       addons:
         apt:
           packages:
@@ -167,7 +167,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=float128_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=float128_tests
       addons:
         apt:
           packages:
@@ -181,7 +181,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../example//examples
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../example//examples
       addons:
         apt:
           packages:
@@ -195,7 +195,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../tools
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../tools
       addons:
         apt:
           packages:
@@ -209,7 +209,7 @@ matrix:
     - os: linux
       arch: arm64
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=misc
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=misc
       addons:
         apt:
           packages:
@@ -223,7 +223,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=special_fun
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=special_fun
       addons:
         apt:
           packages:
@@ -237,7 +237,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=distribution_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=distribution_tests
       addons:
         apt:
           packages:
@@ -251,7 +251,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=quadrature
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=quadrature
       addons:
         apt:
           packages:
@@ -265,7 +265,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=float128_tests
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=float128_tests
       addons:
         apt:
           packages:
@@ -279,7 +279,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../example//examples
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../example//examples
       addons:
         apt:
           packages:
@@ -293,7 +293,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=../tools
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=../tools
       addons:
         apt:
           packages:
@@ -307,7 +307,7 @@ matrix:
     - os: linux
       arch: s390x
       compiler: g++
-      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++11,14,17,2a TEST_SUITE=misc
+      env: TOOLSET=gcc COMPILER=g++ CXXSTD=c++17 TEST_SUITE=misc
       addons:
         apt:
           packages:
