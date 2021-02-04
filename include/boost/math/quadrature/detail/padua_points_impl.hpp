@@ -226,7 +226,6 @@ void padua_points_impl<Real>::calculate_weights()
     // Calculate matrix products
     std::vector<Real> odd_even_product(levels_2*levels_2, Real(0));
 
-    // TODO(mborland): Can this be replaced by valarrays? Whole lot of looping...
     for(std::size_t i = 0; i < levels_2; ++i)
     {
         for(std::size_t j = 0; j < levels_2 - i; ++j)
@@ -258,6 +257,31 @@ void padua_points_impl<Real>::calculate_weights()
     }
 
     // Calculate interpolation weight matricies
+    std::vector<Real> weights_1(levels_2*levels_2);
+
+    for(std::size_t i = 0; i < levels_2; ++i)
+    {
+        for(std::size_t j = 0; j < levels_2; ++j)
+        {
+            weights_1[i*levels_2 + j] = Real(2)/(levels_*(levels_+1));
+        }
+        weights_1[i] /= Real(2);
+    }
+
+    if(levels_ % 2 == 0)
+    {
+        for(std::size_t i = 0; i < levels_2; ++i)
+        {
+            weights_1[i+levels_2*levels_2-1] /= Real(2);
+        }
+
+        for(std::size_t i = 0; i < levels_2; ++i)
+        {
+            weights_1[i*levels_2+levels_2-1] /= Real(2);
+        }
+    }
+
+    std::vector<Real> weights_2(levels_1*levels_3);
 }
 
 }}}} // namespaces
