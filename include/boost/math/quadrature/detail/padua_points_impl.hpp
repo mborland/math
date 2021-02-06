@@ -281,6 +281,80 @@ void padua_points_impl<Real>::calculate_weights()
     }
 
     std::vector<Real> weights_2(levels_1*levels_3);
+
+    for(std::size_t i = 0; i < levels_1; ++i)
+    {
+        for(std::size_t j = 0; j < levels_3; ++j)
+        {
+            weights_2[i*levels_3+j] = Real(2) /(levels_ * (levels_ + 1));
+        }
+        weights_2[i] /= Real(2);
+    }
+
+    if(levels_ % 2 == 0)
+    {
+        for(std::size_t i = 0; i < levels_1; ++i)
+        {
+            weights_2[i*levels_3 + levels_3 - 1] /= Real(2);
+        }
+
+        for(std::size_t i = 0; i < levels_3; ++i)
+        {
+            weights_2[(levels_1-1)*levels_3+i] /= Real(2);
+        }
+    }
+
+    // Add weights to the sub-grids
+    for(std::size_t i = 0; i < levels_2; ++i)
+    {
+        for(std::size_t j = 0; j < levels_2; ++j)
+        {
+            weights_1[i*levels_2 + j] *= odd_even_product[i*levels_2 + j];
+        }
+    }
+
+    for(std::size_t i = 0; i < levels_1; ++i)
+    {
+        for(std::size_t j = 0; j < levels_3; ++j)
+        {
+            weights_2[i*levels_3 + j] *= even_odd_product[i*levels_3 + j];
+        }
+    }
+
+    // Pack subgrid matricies into total weights matrix
+    if(levels_ % 2 == 0)
+    {
+        for(std::size_t i = 0; i < levels_2; ++i)
+        {
+            for(std::size_t j = 0; j < levels_2; ++j)
+            {
+                weights_[2*i*levels_2+j] = weights_1[i*levels_2+j];
+            }
+        }
+
+        for(std::size_t i = 0; i < levels_1; ++i)
+        {
+            for(std::size_t j = 0; j < levels_3; ++j)
+            {
+                weights_[(2*i+1)*levels_2 + j] = weights_2[i*levels_3+j];
+            }
+        }
+    }
+    else
+    {
+        for(std::size_t i = 0; i < levels_1; ++i)
+        {
+            for(std::size_t j = 0; j < levels_2; ++j)
+            {
+                weights_[(levels_+2)*i+j] = weights_1[i*levels_2+j];
+            }
+
+            for(std::size_t j = 0; j < levels_3; ++j)
+            {
+                weights_[(levels_+2)*i+levels_2+j] = weights_2[i*levels_3+j];
+            }
+        }
+    }
 }
 
 }}}} // namespaces

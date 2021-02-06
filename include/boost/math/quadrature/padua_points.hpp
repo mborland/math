@@ -12,9 +12,7 @@
 #ifndef BOOST_MATH_QUADRATURE_PADUA_POINTS
 #define BOOST_MATH_QUADRATURE_PADUA_POINTS
 
-#include <vector>
 #include <memory>
-#include <type_traits>
 #include <cstddef>
 #include <boost/math/quadrature/detail/padua_points_impl.hpp>
 
