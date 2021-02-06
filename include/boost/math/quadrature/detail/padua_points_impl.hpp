@@ -17,11 +17,10 @@
 #include <cstddef>
 #include <cmath>
 #include <boost/math/constants/constants.hpp>
-#include <boost/math/concepts/concepts.hpp>
 
 namespace boost { namespace math { namespace quadrature { namespace detail {
 
-template<SimpleRealType Real>
+template<typename Real>
 class padua_points_impl
 {
 private:
@@ -51,7 +50,7 @@ public:
     };
 };
 
-template<SimpleRealType Real>
+template<typename Real>
 void padua_points_impl<Real>::calculate_order()
 {
     for(std::size_t i = 0; i <= levels_; ++i)
@@ -64,7 +63,7 @@ void padua_points_impl<Real>::calculate_order()
     }
 }
 
-template<SimpleRealType Real>
+template<typename Real>
 void padua_points_impl<Real>::calculate_points()
 {
     using std::cos;
@@ -127,7 +126,7 @@ void padua_points_impl<Real>::calculate_points()
     }
 }
 
-template<SimpleRealType Real>
+template<typename Real>
 void padua_points_impl<Real>::print_points()
 {
     for(std::size_t i = 0; i < points_.size(); ++i)
@@ -137,7 +136,7 @@ void padua_points_impl<Real>::print_points()
     std::cout << std::endl;
 }
 
-template<SimpleRealType Real>
+template<typename Real>
 void padua_points_impl<Real>::calculate_weights()
 {
     using std::cos;

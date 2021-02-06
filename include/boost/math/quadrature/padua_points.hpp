@@ -17,11 +17,10 @@
 #include <type_traits>
 #include <cstddef>
 #include <boost/math/quadrature/detail/padua_points_impl.hpp>
-#include <boost/math/concepts/concepts.hpp>
 
 namespace boost { namespace math { namespace quadrature {
 
-template<SimpleRealType Real>
+template<typename Real>
 class padua_points
 {
 private:
