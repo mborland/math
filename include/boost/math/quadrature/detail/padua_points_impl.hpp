@@ -34,6 +34,7 @@ private:
     void calculate_points();
     void print_points();
     void calculate_weights();
+    void print_weights();
 
 public:
     explicit padua_points_impl(std::size_t levels) : levels_ {levels}, num_points_ {(levels+1)*(levels+2)} 
@@ -47,6 +48,7 @@ public:
         print_points();
         
         calculate_weights();
+        print_weights();
     };
 };
 
@@ -355,6 +357,16 @@ void padua_points_impl<Real>::calculate_weights()
             }
         }
     }
+}
+
+template<typename Real>
+void padua_points_impl<Real>::print_weights()
+{
+    for(std::size_t i = 0; i < weights_.size(); ++i)
+    {
+        std::cout << "X: " << i << ", Y: " << weights_[i] << '\n';
+    }
+    std::cout << std::endl;
 }
 
 }}}} // namespaces
